@@ -132,22 +132,22 @@ iframe {
 /*//////////////////////////////////////////////////////////////////
 [ Utility ]*/
 .txt1 {
-  font-family: Ubuntu-Regular;
-  font-size: 15px;
+  font-family: Franklin Gothic Medium;
+  font-size: 14px;
   color: #999999;
   line-height: 1.4;
 }
 
 .txt2 {
-  font-family: Ubuntu-Regular;
-  font-size: 15px;
+  font-family: Franklin Gothic Medium;
+  font-size: 14px;
   color: #57b846;
   line-height: 1.4;
 }
 
 .txt3 {
-  font-family: Ubuntu-Bold;
-  font-size: 15px;
+  font-family: Franklin Gothic Medium;
+  font-size: 14px;
   color: #57b846;
   line-height: 1.4;
   text-transform: uppercase;
@@ -179,7 +179,7 @@ iframe {
 }
 
 .wrap-login100 {
-  width: 500px;
+  width: 450px;
   background: #fff;
   border-radius: 20px;
   overflow: hidden;
@@ -200,7 +200,7 @@ iframe {
 }
 
 .login100-form-title {
-  font-family: JosefinSans-Bold;
+  font-family: Franklin Gothic Medium;
   font-size: 30px;
   color: #fff;
   line-height: 1.2;
@@ -212,7 +212,7 @@ iframe {
   top: 0;
   left: 0;
   background-color: #3660bb;
-  padding-top: 50px;
+  padding-top: 30px;
   padding-bottom: 39px;
 }
 
@@ -228,7 +228,7 @@ iframe {
 }
 
 .input100 {
-  font-family: Ubuntu-Bold;
+  font-family: Franklin Gothic Medium;
   font-size: 15px;
   color: #1b3815;
   line-height: 1.2;
@@ -300,7 +300,7 @@ iframe {
   background-color: #3660bb;
   border-radius: 25px;
 
-  font-family: Ubuntu-Bold;
+  font-family: Franklin Gothic Medium;
   font-size: 15px;
   color: #fff;
   line-height: 1.2;
