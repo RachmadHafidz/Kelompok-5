@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V8</title>
+	<title>Register</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -33,23 +33,44 @@
 	
 	<div class="limiter">
 		<div class="container-login100">
-			<div class="wrap-login100">
+			<div class="wrap-regist100">
 				<form class="login100-form validate-form p-l-55 p-r-55 p-t-178">
 					<span class="login100-form-title">
-						LOGIN
+						REGISTER
 					</span>
                     
-            
-                    <form action="/action_page.php">
+                    <form action="/action_page.php" class="was-validated">
     <div class="row">
-      <div class="col">
-      <label for="uname">Nama</label>
+      <div class="col col-md-12">
+        <label for="uname">Nama</label>
         <input type="text" class="form-control" id="email" placeholder="Enter email" name="email">
-      </div>
-      <div class="col">
-      <label for="uname">Nama</label>
+        <br>
+        <label for="uname">Nomor Telepon</label>
+        <input type="password" class="form-control" placeholder="Enter password" name="pswd">
+        <br>
+        <label for="uname">Nomor Identitas</label>
+        <input type="password" class="form-control" placeholder="Enter password" name="pswd">
+        <br>
+        <label for="uname">Foto</label>
+        <input type="file" class="form-control" placeholder="Enter password" name="pswd">
+        <br>
+        <label for="uname">Email</label>
+        <input type="password" class="form-control" placeholder="Enter password" name="pswd">
+        <br>
+        <label for="uname">Username</label>
+        <input type="password" class="form-control" placeholder="Enter password" name="pswd">
+        <br>
+        <label for="uname">Password</label>
         <input type="password" class="form-control" placeholder="Enter password" name="pswd">
       </div>
+    </div>
+    <br>
+    <div class="form-group form-check">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="remember" required> I agree on blabla.
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Check this checkbox to continue.</div>
+      </label>
     </div>
    
   </form>
