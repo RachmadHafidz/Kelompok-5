@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Reset Password</title>
+	<title>Verification</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -35,13 +35,13 @@
 						Reset password
 					</span>
 
-					<div class="wrap-input100 validate-input m-b-16" data-validate="Masukkan Username/email">
-						<input class="input100" type="text" name="username/email" placeholder="Username/email">
+					<div class="wrap-input100 validate-input m-b-16" data-validate="Masukkan kode verifikasi">
+						<input class="input100" type="text" name="kode verfikasi" placeholder="kode verifikasi">
 						<span class="focus-input100"></span>
 					</div>
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
-                            Cek Akun
+							Submit
 						</button>
 					</div>
 
@@ -52,8 +52,8 @@
                         </a>
 						</span>
 
-						<a href="#" class="txt">
-							Daftar
+						<a href="#" class="txt4">
+							Daftar baru
 						</a>
 					</div>
 				</form>
