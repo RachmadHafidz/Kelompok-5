@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Register</title>
+	<title>Reset Password</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="css/images/icons/favicon.ico"/>
+	<link rel="icon"  href="css/images/icons/icons8.ico" />
 <!--===============================================================================================-->
-
+	<link rel="stylesheet" type="text/css" href="css/vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
@@ -33,50 +29,32 @@
 	
 	<div class="limiter">
 		<div class="container-login100">
-			<div class="wrap-regist100">
+			<div class="wrap-login100">
 				<form class="login100-form validate-form p-l-55 p-r-55 p-t-178">
 					<span class="login100-form-title">
-						REGISTER
+						Reset password
 					</span>
-                    
-                    <form action="/action_page.php" class="was-validated">
-    <div class="row">
-      <div class="col col-md-12">
-        <label for="uname">Nama</label>
-        <input type="text" class="form-control" id="nama" placeholder="Masukan nama" name="email">
-        <br>
-        <label for="uname">Nomor Telepon</label>
-        <input type="text" class="form-control" placeholder="Masukan nomor telepon" name="Notlp">
-        <br>
-        <label for="uname">Nomor Identitas</label>
-        <input type="text" class="form-control" placeholder="Masukan nomor identitas" name="Noid">
-        <br>
-        <label for="uname">Foto</label>
-        <input type="file" class="form-control" placeholder="Image" name="image">
-        <br>
-        <label for="uname">Email</label>
-        <input type="text" class="form-control" placeholder="Masukkan email" name="email">
-        <br>
-        <label for="uname">Username</label>
-        <input type="text" class="form-control" placeholder="Username" name="username">
-        <br>
-        <label for="uname">Password</label>
-        <input type="password" class="form-control" placeholder="Buat password" name="pswd">
-      </div>
-    </div>
-    <br>
-    <div class="form-group form-check">
-      <label class="form-check-label">
-        <input class="form-check-input" type="checkbox" name="remember" required> I agree on blabla.
-        <div class="valid-feedback">Valid.</div>
-        <div class="invalid-feedback">Check this checkbox to continue.</div>
-      </label>
-    </div>
-   
-  </form>
 
-<div class="flex-col-c p-t-50 p-b-40">
-<button type="submit" class="btn btn-primary mt-3">Submit</button>
+					<div class="wrap-input100 validate-input m-b-16" data-validate="Masukkan Username/email">
+						<input class="input100" type="text" name="username/email" placeholder="Username/email">
+						<span class="focus-input100"></span>
+					</div>
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+                            Cek Akun
+						</button>
+					</div>
+
+					<div class="flex-col-c p-t-50 p-b-40">
+						<span class="txt1 p-b-9">
+						<a href='#'	class ="txt3">
+                            Hubungi Admin
+                        </a>
+						</span>
+
+						<a href="#" class="txt">
+							Daftar
+						</a>
 					</div>
 				</form>
 			</div>

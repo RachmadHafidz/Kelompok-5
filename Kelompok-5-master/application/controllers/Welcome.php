@@ -20,6 +20,6 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('vlupapass.php');
+		$this->load->view('V_login.php');
 	}
 }
