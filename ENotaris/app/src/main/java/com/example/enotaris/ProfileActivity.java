@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -12,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class ProfileActivity extends AppCompatActivity {
 
     TextView textView;
+    ImageView mess, mon;
     Button logout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,14 +21,10 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         // Assign ID's to textview and button.
-        textView = (TextView)findViewById(R.id.TextViewUserEmail);
+
         logout = (Button)findViewById(R.id.button_logout);
 
-        // Receiving value into activity using intent.
-        String TempHolder = getIntent().getStringExtra("UserEmailTAG");
 
-        // Setting up received value into EditText.
-        textView.setText(textView.getText() + TempHolder);
 
         // Adding click listener to logout button.
         logout.setOnClickListener(new View.OnClickListener() {

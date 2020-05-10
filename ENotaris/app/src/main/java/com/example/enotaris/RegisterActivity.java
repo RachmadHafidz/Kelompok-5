@@ -1,11 +1,13 @@
 package com.example.enotaris;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,12 +23,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
-    EditText email,password,nama,telp,alamat;
+    EditText email,password,nama,telp, alamat;
     Button register;
     RequestQueue requestQueue;
-    String NamaHolder,TelpHolder,AlamatHolder,EmailHolder,PasswordHolder;
+    String NamaHolder,TelpHolder,EmailHolder,PasswordHolder, AlamatHolder;
     ProgressDialog progressDialog;
-    String HttpUrl="http://192.168.1.9/android/daftar.php";
+    String HttpUrl="http://192.168.1.9/volley/daftar.php";
     Boolean CheckEditText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,7 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             }
         });
+
     }
 
     public void UserRegistration() {
@@ -92,11 +95,10 @@ public class RegisterActivity extends AppCompatActivity {
     public void CheckEditTextIsEmptyOrNot() {
         NamaHolder=nama.getText().toString().trim();
         TelpHolder=telp.getText().toString().trim();
-        AlamatHolder=alamat.getText().toString().trim();
         EmailHolder=email.getText().toString().trim();
+        AlamatHolder=alamat.getText().toString().trim();
         PasswordHolder=password.getText().toString().trim();
-        if (TextUtils.isEmpty(NamaHolder) || TextUtils.isEmpty(TelpHolder) || TextUtils.isEmpty(AlamatHolder)
-                || TextUtils.isEmpty(EmailHolder) || TextUtils.isEmpty(PasswordHolder)){
+        if (TextUtils.isEmpty(NamaHolder) || TextUtils.isEmpty(TelpHolder) || TextUtils.isEmpty(AlamatHolder) || TextUtils.isEmpty(EmailHolder) || TextUtils.isEmpty(PasswordHolder)){
             CheckEditText=false;
         }
         else {

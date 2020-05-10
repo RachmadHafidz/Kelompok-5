@@ -47,8 +47,11 @@
         android:hint="Alamat"
         android:inputType="text"
         android:maxLines="1"
+        android:maxLength="12"
         android:singleLine="true"
-        android:imeOptions="actionNext"/>
+        android:imeOptions="actionNext"
+        tools:ignore="DuplicateIds" />
+
     <EditText
         android:id="@+id/email"
         android:layout_width="match_parent"
@@ -78,4 +81,6 @@
         android:textColor="@android:color/white"
         android:text="Sign Up"
         android:id="@+id/signup"/>
+
+
 </LinearLayout>
