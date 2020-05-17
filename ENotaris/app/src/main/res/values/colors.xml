@@ -6,5 +6,9 @@
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorLightBlue">#ADD8E6</color>
     <color name="holo_red_light">#F08080</color>
-
+    <color name="biru">#B0C4DE</color>
+    <color name="abu">#778899</color>
+    <color name="navy">#000080</color>
+    <color name="biru2">#CCCCFF</color>
+    <color name="black">#000000</color>
 </resources>

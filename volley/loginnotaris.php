@@ -6,10 +6,10 @@
  
  $koneksi = mysqli_connect($HostName,$HostUser,$HostPass,$DatabseName);
  
- $email = $_POST['email'];
- $password = $_POST['password'];
+ $email = $_POST['emailnot'];
+ $password = $_POST['passwordnot'];
  
- $Sql_Query = "select * from user where email = '$email' and password = '$password' ";
+ $Sql_Query = "select * from tb_notaris where emailnot = '$email' and passwordnot = '$password' ";
  
  $prosescek = mysqli_fetch_array(mysqli_query($koneksi,$Sql_Query));
  

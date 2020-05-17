@@ -10,60 +10,91 @@
     android:background="@color/colorLightBlue"
     android:orientation="vertical"
     tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="Selamat Datang di E Notaris"
+        android:fontFamily="@font/bebas_regular"
+        android:textSize="25dp"
+        android:textColor="@color/navy"
+        android:gravity="center">
+
+    </TextView>
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginBottom="60dp"
         android:layout_gravity="center_horizontal"
         android:layout_margin="16dp"
         android:src="@drawable/iconfinder_3_avatar_2754579" />
-
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        android:maxLines="1"
-        android:singleLine="true"
-        android:imeOptions="actionNext"/>
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:maxLines="1"
-        android:singleLine="true"
-        android:imeActionId="6"
-        android:imeActionLabel="Sign In"
-        android:imeOptions="actionDone"
-        app:passwordToggleEnabled="true"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="6dp"
         android:background="@drawable/custom"
+        android:fontFamily="@font/bebas_regular"
+        android:textSize="18dp"
         android:textColor="@android:color/white"
-        android:text="Log In"
+        android:text="Log In notaris"
         android:id="@+id/login"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:background="@drawable/custom2"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/bebas_regular"
+        android:textSize="18dp"
+        android:text="Log In client"
+        android:id="@+id/login2"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="atau"
         android:gravity="center"
+        android:fontFamily="@font/bebas_regular"
         android:textColor="@color/colorPrimaryDark"
         android:layout_marginBottom="6dp">
     </TextView>
 
-    <Button
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="6dp"
-        android:textColor="@android:color/white"
-        android:background="@drawable/custom"
-        android:text="daftar"
-        android:id="@+id/signup"/>
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginBottom="6dp"
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/bebas_regular"
+            android:textSize="18dp"
+            android:background="@color/abu"
+            android:text="daftar notaris"
+            android:id="@+id/signup"/>
+
+        <Button
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="6dp"
+            android:background="@color/abu"
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/bebas_regular"
+            android:textSize="18dp"
+            android:text="daftar client"
+            android:id="@+id/signup2"/>
+
+    </LinearLayout>
+
 </LinearLayout>

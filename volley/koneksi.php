@@ -2,5 +2,5 @@
 $HostName = 'localhost';
 $HostUser = 'root';
 $HostPass = '';
-$DatabseName = 'e-notaris';
+$DatabseName = 'db_enotaris';
  ?>

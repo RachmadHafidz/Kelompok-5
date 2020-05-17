@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">E Notaris</string>
     <string name="create_account"><font color="#00ff00">text</font></string>
     <string name="email">Email</string>
@@ -7,5 +7,6 @@
     <string name="username">Username</string>
     <string name="register">Register</string>
     <string name="back_to_login">Back to Login</string>
+
 
 </resources>
