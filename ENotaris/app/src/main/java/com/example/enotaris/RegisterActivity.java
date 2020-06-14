@@ -28,7 +28,7 @@ public class RegisterActivity extends AppCompatActivity {
     RequestQueue requestQueue;
     String NamaHolder,TelpHolder,EmailHolder,PasswordHolder;
     ProgressDialog progressDialog;
-    String HttpUrl="http://192.168.1.9/volley/daftarr.php";
+    String HttpUrl="http://192.168.1.5/volley/daftar.php";
     Boolean CheckEditText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

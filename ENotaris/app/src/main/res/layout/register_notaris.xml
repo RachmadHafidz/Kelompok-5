@@ -51,6 +51,17 @@
         android:imeOptions="actionNext"/>
 
     <EditText
+        android:id="@+id/alamat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Alamat"
+        android:inputType="text"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:imeOptions="actionNext"
+        tools:ignore="DuplicateIds" />
+
+    <EditText
         android:id="@+id/emailnot"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

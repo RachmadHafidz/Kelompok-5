@@ -21,12 +21,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RegisterNotaris extends AppCompatActivity {
-    EditText emailnot,passwordnot,namanot,telpnot, sk;
+    EditText emailnot,passwordnot,namanot,telpnot, sk, alamat;
     Button daftar;
     RequestQueue requestQueue;
-    String NamanotHolder,TelpnotHolder,EmailnotHolder,PasswordnotHolder, SkHolder;
+    String NamanotHolder,TelpnotHolder,EmailnotHolder,PasswordnotHolder, SkHolder, AlamatHolder;
     ProgressDialog progressDialog;
-    String HttpUrl="http://192.168.1.9/volley/daftarr.php";
+    String HttpUrl="http://192.168.1.5/volley/daftarr.php";
     Boolean CheckEditText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +36,7 @@ public class RegisterNotaris extends AppCompatActivity {
         emailnot=findViewById(R.id.emailnot);
         passwordnot=findViewById(R.id.passwordnot);
         namanot=findViewById(R.id.namanot);
+        alamat=findViewById(R.id.alamat);
         telpnot=findViewById(R.id.telpnot);
         sk=findViewById(R.id.sk);
         daftar=findViewById(R.id.daftar);
@@ -82,6 +83,7 @@ public class RegisterNotaris extends AppCompatActivity {
                 params.put("namanot",NamanotHolder);
                 params.put("telp",TelpnotHolder);
                 params.put("emailnot",EmailnotHolder);
+                params.put("alamat_kantor",AlamatHolder);
                 params.put("no_sk",SkHolder);
                 params.put("passwordnot",PasswordnotHolder);
                 return params;
@@ -95,9 +97,10 @@ public class RegisterNotaris extends AppCompatActivity {
         NamanotHolder=namanot.getText().toString().trim();
         TelpnotHolder=telpnot.getText().toString().trim();
         EmailnotHolder=emailnot.getText().toString().trim();
+        AlamatHolder=alamat.getText().toString().trim();
         SkHolder=sk.getText().toString().trim();
         PasswordnotHolder=passwordnot.getText().toString().trim();
-        if (TextUtils.isEmpty(NamanotHolder) || TextUtils.isEmpty(TelpnotHolder) || TextUtils.isEmpty(EmailnotHolder) || TextUtils.isEmpty(SkHolder) || TextUtils.isEmpty(PasswordnotHolder)){
+        if (TextUtils.isEmpty(NamanotHolder) || TextUtils.isEmpty(TelpnotHolder) || TextUtils.isEmpty(EmailnotHolder) || TextUtils.isEmpty(AlamatHolder) || TextUtils.isEmpty(SkHolder) || TextUtils.isEmpty(PasswordnotHolder)){
             CheckEditText=false;
         }
         else {
