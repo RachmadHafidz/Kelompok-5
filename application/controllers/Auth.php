@@ -15,6 +15,7 @@ class Auth extends CI_Controller
 
 	public function index()
 	{
+
 		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required');
 
@@ -39,25 +40,29 @@ class Auth extends CI_Controller
 
 
 
+
 		if ($notaris) {
 			if ($notaris['tipe_id'] == 2) {
 				//cek
 				if (password_verify($password, $notaris['password'])) {
 					$data = [
 						'email' => $notaris['email'],
-						'tipe_id' => $notaris['tipe_id']
+						'tipe_id' => $notaris['tipe_id'],
+
 					];
+
+
 					$this->session->set_userdata($data);
 
 					redirect('notaris');
 				} else {
 					$this->session->set_flashdata('message', '<div class= "alert alert-danger" role="alert">
-					Incorrect email or password</div>');
+					Email atau Password salah</div>');
 					redirect('auth');
 				}
 			} else {
 				$this->session->set_flashdata('message', '<div class= "alert alert-danger" role="alert">
-				Email is not registered. Please register! </div>');
+				Email tidak terdaftar </div>');
 				redirect('auth');
 			}
 		} else if ($client) {
@@ -72,12 +77,12 @@ class Auth extends CI_Controller
 					redirect('client');
 				} else {
 					$this->session->set_flashdata('message', '<div class= "alert alert-danger" role="alert">
-					Incorrect email or password</div>');
+					Email atau Password salah</div>');
 					redirect('auth');
 				}
 			} else {
 				$this->session->set_flashdata('message', '<div class= "alert alert-danger" role="alert">
-				Email is not registered. Please register! </div>');
+				Email tidak terdaftar </div>');
 				redirect('auth');
 			}
 		} else if ($admin) {
@@ -92,17 +97,17 @@ class Auth extends CI_Controller
 					redirect('admin');
 				} else {
 					$this->session->set_flashdata('message', '<div class= "alert alert-danger" role="alert">
-					Incorrect email or password </div>');
+					Email atau Password salah </div>');
 					redirect('auth');
 				}
 			} else {
 				$this->session->set_flashdata('message', '<div class= "alert alert-danger" role="alert">
-				Email is not registered. Please register! </div>');
+				Email tidak terdaftar </div>');
 				redirect('auth');
 			}
 		} else {
 			$this->session->set_flashdata('message', '<div class= "alert alert-danger" role="alert">
-				Email is not registered. Please register! </div>');
+				Email tidak terdaftar </div>');
 			redirect('auth');
 		}
 	}
@@ -123,19 +128,19 @@ class Auth extends CI_Controller
 
 		$this->form_validation->set_rules('nama', 'Nama', 'required|trim');
 		$this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[notaris.email]', [
-			'is_unique' => 'This email has already registered!'
+			'is_unique' => 'Email sudah terdaftar!'
 		]);
 		$this->form_validation->set_rules('password', 'Password', 'required|trim');
 
 		if ($this->form_validation->run() == false) {
-			$data['judul'] = 'Add New Admin';
+			$data['judul'] = 'Tambah Admin Baru';
 			$this->load->view('templates/auth_header', $data);
 			$this->load->view('auth/regist_admin');
 			$this->load->view('templates/auth_footer');
 		} else {
 			$this->registadmin_model->registadmin();
 			$this->session->set_flashdata('message', '<div class= "alert alert-success" role="alert">
-			Your account has been created. Please login! </div>');
+			Akun anda berhasil dibuat, silahkan login </div>');
 			redirect('auth');
 		}
 	}
@@ -146,19 +151,19 @@ class Auth extends CI_Controller
 		$this->form_validation->set_rules('no_sk', 'No SK', 'required|trim');
 		$this->form_validation->set_rules('telepon', 'Telepon', 'required|trim');
 		$this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[notaris.email]', [
-			'is_unique' => 'This email has already registered!'
+			'is_unique' => 'Email sudah terdaftar!'
 		]);
 		$this->form_validation->set_rules('password', 'Password', 'required|trim');
 
 		if ($this->form_validation->run() == false) {
-			$data['judul'] = 'Register New Notaris';
+			$data['judul'] = 'Daftar Akun Notaris';
 			$this->load->view('templates/auth_header', $data);
 			$this->load->view('auth/regist');
 			$this->load->view('templates/auth_footer');
 		} else {
 			$this->regist_model->regist();
 			$this->session->set_flashdata('message', '<div class= "alert alert-success" role="alert">
-			Your account has been created. Please login! </div>');
+			Akun anda berhasil dibuat, silahkan login </div>');
 			redirect('auth');
 		}
 	}
@@ -167,10 +172,11 @@ class Auth extends CI_Controller
 	public function registration()
 	{
 
+
 		$this->form_validation->set_rules('nama', 'Nama', 'required|trim');
 		$this->form_validation->set_rules('telepon', 'Telepon', 'required|trim');
 		$this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[client.email]', [
-			'is_unique' => 'This email has already registered!'
+			'is_unique' => 'Email sudah terdaftar'
 		]);
 		$this->form_validation->set_rules('password', 'Password', 'required|trim');
 
@@ -182,7 +188,7 @@ class Auth extends CI_Controller
 		} else {
 			$this->registration_model->registration();
 			$this->session->set_flashdata('message', '<div class= "alert alert-success" role="alert">
-			Your account has been created. Please login! </div>');
+			Akun anda berhasil dibuat, silahkan login </div>');
 			redirect('auth');
 		}
 	}
@@ -193,7 +199,7 @@ class Auth extends CI_Controller
 		$this->session->unset_userdata('tipe_id');
 
 		$this->session->set_flashdata('message', '<div class= "alert alert-success" role="alert">
-		You have been logged out! </div>');
+		Terima Kasih </div>');
 		redirect('auth');
 	}
 
@@ -201,9 +207,13 @@ class Auth extends CI_Controller
 	{
 
 
-		$data['judul'] = 'Register';
+		$data['judul'] = 'Daftar Akun Baru';
 		$this->load->view('templates/auth_header', $data);
 		$this->load->view('auth/menu');
 		$this->load->view('templates/auth_footer');
+	}
+	public function blocked()
+	{
+		$this->load->view('auth/blocked');
 	}
 }
