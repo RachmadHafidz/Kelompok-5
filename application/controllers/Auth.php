@@ -1,7 +1,11 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Auth extends CI_Controller
+require APPPATH . 'libraries/REST_Controller.php';
+
+use Restserver\Libraries\REST_Controller;
+
+class Auth extends REST_Controller
 
 {
 	public function __construct()
@@ -113,16 +117,6 @@ class Auth extends CI_Controller
 	}
 
 
-
-
-
-
-
-
-
-
-
-
 	public function registadmin()
 	{
 
@@ -199,7 +193,7 @@ class Auth extends CI_Controller
 		$this->session->unset_userdata('tipe_id');
 
 		$this->session->set_flashdata('message', '<div class= "alert alert-success" role="alert">
-		Terima Kasih </div>');
+		Berhasil keluar </div>');
 		redirect('auth');
 	}
 

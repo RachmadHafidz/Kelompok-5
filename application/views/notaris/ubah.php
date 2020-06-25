@@ -7,7 +7,7 @@
                 <div class="col-lg">
                     <div class="p-5">
                         <div class="text-center">
-                            <h1 class="h4 text-gray-900 mb-4">Buat Akta Surat Kuasa</h1>
+                            <h1 class="h4 text-gray-900 mb-4">Konfirmasi Akta </h1>
                         </div>
 
                         <?php $notaris; ?>

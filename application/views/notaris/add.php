@@ -39,7 +39,7 @@
 
 
                             <div class="col-sm-10">
-                                <button type="submit" class="btn btn-success">Kirim</button>
+                                <button type="submit" class="btn btn-success">Tambah</button>
                             </div>
                         </form>
 

@@ -4,21 +4,16 @@
     <div class="row mt-3">
         <div class="col-md-6">
             <form action="" method="post">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Cari notaris.." name="keyword">
-                    <div class="input-group-append">
-                        <button type="submit" class="btn btn-primary">Cari</button>
-                    </div>
-                </div>
+
             </form>
         </div>
     </div>
     <div class="row-mt-3">
         <div class="col-md-6">
-            <h3>DAFTAR NOTARIS</h3>
+
             <?php if (empty($pembayaran)) : ?>
                 <div class="alert alert-danger" role="alert">
-                    akta tidak ditemukan !
+                    Pembayaran tidak ditemukan !
                 </div>
             <?php endif; ?>
 

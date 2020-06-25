@@ -302,17 +302,18 @@ class Client extends CI_Controller
 
     public function buat_akta($id)
     {
-        $data['judul'] = 'Buat Akta Baru';
-        $data['client'] = $this->db->get_where('client', ['email' =>
-        $this->session->userdata('email')])->row_array();
+        // echo $id;
+        // $data['judul'] = 'Buat Akta Baru';
+        // $data['client'] = $this->db->get_where('client', ['email' =>
+        // $this->session->userdata('email')])->row_array();
 
-        $data['notaris'] = $this->regist_model->getNotarisById($id);
+        // $data['notaris'] = $this->regist_model->getNotarisById($id);
 
-        $this->load->view('templates/client/header_client', $data);
-        $this->load->view('templates/client/sidebar_client', $data);
-        $this->load->view('templates/client/topbar_client', $data);
-        $this->load->view('Client/buat_akta');
-        $this->load->view('templates/client/footer_client');
+        // $this->load->view('templates/client/header_client', $data);
+        // $this->load->view('templates/client/sidebar_client', $data);
+        // $this->load->view('templates/client/topbar_client', $data);
+        // $this->load->view('Client/buat_akta', $data);
+        // $this->load->view('templates/client/footer_client');
 
         // function detail digunakan untuk melihat detail data yang kita ingin tampilkan
     }
@@ -424,6 +425,7 @@ class Client extends CI_Controller
 
     public function sewa1()
     {
+        $idnot = $this->input->post('idnot');
         $data['judul'] = 'Detail Informasi Notaris';
         $data['client'] = $this->db->get_where('client', ['email' =>
         $this->session->userdata('email')])->row_array();
@@ -431,7 +433,7 @@ class Client extends CI_Controller
         $this->load->view('templates/client/header_client', $data);
         $this->load->view('templates/client/sidebar_client', $data);
         $this->load->view('templates/client/topbar_client', $data);
-        $this->load->view('Client/buat_akta');
+        $this->load->view('Client/buat_akta/' . $idnot);
         $this->load->view('templates/client/footer_client');
 
         $nama = $this->input->post('nama');
@@ -484,8 +486,13 @@ class Client extends CI_Controller
     {
         $this->load->helper('download');
         $fileinfo = $this->registration_model->download($id);
-        $file = 'akta/' . $fileinfo['akta'];
-        force_download($file, NULL);
+
+        if ($fileinfo['akta'] != 'Belum ada Akta') {
+            $file = 'akta/' . $fileinfo['akta'];
+            force_download($file, NULL);
+        } else {
+            echo '<script> alert("gak onok cok") </script>';
+        }
     }
 
     public function pembayaran()

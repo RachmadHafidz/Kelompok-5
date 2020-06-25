@@ -9,7 +9,7 @@
                         <div class="text-center">
                             <h1 class="h4 text-gray-900 mb-4">Form Pembuatan Akta</h1>
                         </div>
-                       
+
 
                         <h5 class="float-right"><strong>Notaris <?= $notaris['nama']; ?></strong></h5>
                         <br>
@@ -46,7 +46,7 @@
                         <div class="col-sm-9">
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" id="file" name="file">
-                                <label class="custom-file-label" for="file">Choose file</label>
+                                <label class="custom-file-label" for="file">Pilih file</label>
                             </div>
                         </div>
 
