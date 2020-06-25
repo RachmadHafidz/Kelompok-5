@@ -7,7 +7,7 @@
                 <div class="col-lg">
                     <div class="p-5">
                         <div class="text-center">
-                            <h1 class="h4 text-gray-900 mb-4">Create New Acount Notaris</h1>
+                            <h1 class="h4 text-gray-900 mb-4">Buat akun baru</h1>
                         </div>
                         <form class="user" method="post" action="<?= base_url('auth/regist'); ?>">
                             <div class="form-group">
@@ -30,16 +30,14 @@
                                 <input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Password">
                                 <?= form_error('password', ' <small class="text-danger pl-3">', '</small>'); ?>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-user btn-block">
-                                Create Acount
+                            <button type="submit" class="btn btn-success btn-user btn-block">
+                                Buat akun
                             </button>
                         </form>
                         <hr>
+
                         <div class="text-center">
-                            <a class="small" href="forgot-password.html">Forgot Password?</a>
-                        </div>
-                        <div class="text-center">
-                            <a class="small" href="<?= base_url('auth'); ?>">Have already acount? Login!</a>
+                            <a class="small" href="<?= base_url('auth'); ?>">Sudah punya akun? Login!</a>
                         </div>
                     </div>
                 </div>

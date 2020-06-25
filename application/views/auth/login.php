@@ -19,7 +19,7 @@
 
 								<form class="user" method="post" action="<?= base_url('auth'); ?>">
 									<div class="form-group">
-										<input type="text" class="form-control form-control-user" id="email" name="email" placeholder="Enter Email Address..." value="<?= set_value('nama'); ?>">
+										<input type="text" class="form-control form-control-user" id="email" name="email" placeholder="Masukkan alamat email..." value="<?= set_value('nama'); ?>">
 										<?= form_error('email', ' <small class="text-danger pl-3">', '</small>'); ?>
 									</div>
 									<div class="form-group">
@@ -29,17 +29,17 @@
 									<div class="form-group">
 
 									</div>
-									<button type="submit" class="btn btn-primary btn-user btn-block">
+									<button type="submit" class="btn btn-success btn-user btn-block">
 										Login
 									</button>
 
 								</form>
 								<hr>
 								<div class="text-center">
-									<a class="small" href="forgot-password.html">Forgot Password?</a>
+									<a class="small" href="forgot-password.html">Lupa Password?</a>
 								</div>
 								<div class="text-center">
-									<a class="small" href="<?= base_url('auth/menu'); ?>">Create New Account</a>
+									<a class="small" href="<?= base_url('auth/menu'); ?>">Buat akun baru</a>
 								</div>
 							</div>
 						</div>
