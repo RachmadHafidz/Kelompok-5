@@ -13,19 +13,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
+
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button signup;
+    Button login, signup, signup2,login2;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,16 +29,45 @@ public class MainActivity extends AppCompatActivity {
 
         // Assigning ID's to Button.
 
-        signup = (Button) findViewById(R.id.signup2);
+        signup = (Button) findViewById(R.id.signup);
+        login = (Button) findViewById(R.id.login);
+        signup2 = (Button) findViewById(R.id.signup2);
+        login2 = (Button) findViewById(R.id.login2);
 
 
         //button login notaris
-        signup.setOnClickListener(new View.OnClickListener() {
+        login2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                // Redirect to Main Login activity after log out.
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+
+                startActivity(intent);
+
+            }
+        });
+
+        signup2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 // Redirect to Main Login activity after log out.
                 Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
+
+                startActivity(intent);
+
+            }
+        });
+
+
+
+        signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                // Redirect to Main Login activity after log out.
+                Intent intent = new Intent(MainActivity.this, RegNot.class);
 
                 startActivity(intent);
 
