@@ -49,9 +49,7 @@ public class RegisterActivity extends AppCompatActivity {
                 progressDialog.setMessage("Menambahkan Data...");
                 progressDialog.setCancelable(false);
                 progressDialog.show();
-                Intent i = new Intent(RegisterActivity.this,
-                        LoginActivity.class);
-                startActivity(i);
+
                 name = etName.getText().toString();
                 email = etEmail.getText().toString();
                 telp = etTelp.getText().toString();
@@ -116,8 +114,6 @@ public class RegisterActivity extends AppCompatActivity {
                                         })
 
                                         .show();
-
-
                             }
                             else{
                                 new AlertDialog.Builder(RegisterActivity.this)

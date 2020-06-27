@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 // Redirect to Main Login activity after log out.
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                Intent intent = new Intent(MainActivity.this, Login.class);
 
                 startActivity(intent);
 
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 // Redirect to Main Login activity after log out.
-                Intent intent = new Intent(MainActivity.this, RegNot.class);
+                Intent intent = new Intent(MainActivity.this, Regis.class);
 
                 startActivity(intent);
 

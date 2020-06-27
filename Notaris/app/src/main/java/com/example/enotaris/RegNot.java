@@ -50,9 +50,7 @@ public class RegNot extends AppCompatActivity {
                 progressDialog.setMessage("Menambahkan Data...");
                 progressDialog.setCancelable(false);
                 progressDialog.show();
-                Intent i = new Intent(RegNot.this,
-                        LoginActivity.class);
-                startActivity(i);
+
                 nama = etNama.getText().toString();
                 email = etEmail.getText().toString();
                 sk = etSK.getText().toString();
