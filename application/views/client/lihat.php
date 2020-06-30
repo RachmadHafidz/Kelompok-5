@@ -3,6 +3,9 @@
 
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800"><?= $judul; ?></h1>
+    <a href="<?= base_url(); ?>client/lapor/" class="btn btn-danger float-left"> Laporkan Akta</a>
+    <br>
+    <br>
     <?php if ($this->session->flashdata('flash')) : ?>
         <div class="row mt-3">
             <div class="col-md-6">

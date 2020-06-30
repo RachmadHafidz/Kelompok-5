@@ -1,11 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-require APPPATH . 'libraries/REST_Controller.php';
-
-use Restserver\Libraries\REST_Controller;
-
-class Auth extends REST_Controller
+class Auth extends CI_Controller
 
 {
 	public function __construct()
@@ -48,7 +44,7 @@ class Auth extends REST_Controller
 		if ($notaris) {
 			if ($notaris['tipe_id'] == 2) {
 				//cek
-				if (password_verify($password, $notaris['password'])) {
+				if (md5($password) == $notaris['password']) {
 					$data = [
 						'email' => $notaris['email'],
 						'tipe_id' => $notaris['tipe_id'],
@@ -72,7 +68,7 @@ class Auth extends REST_Controller
 		} else if ($client) {
 			if ($client['tipe_id'] == 3) {
 				//cek
-				if (password_verify($password, $client['password'])) {
+				if (md5($password) == $client['password']) {
 					$data = [
 						'email' => $client['email'],
 						'tipe_id' => $client['tipe_id']
@@ -92,7 +88,7 @@ class Auth extends REST_Controller
 		} else if ($admin) {
 			if ($admin['tipe_id'] == 1) {
 				//cek
-				if (password_verify($password, $admin['password'])) {
+				if (md5($password) == $admin['password']) {
 					$data = [
 						'email' => $admin['email'],
 						'tipe_id' => $admin['tipe_id']
@@ -115,6 +111,16 @@ class Auth extends REST_Controller
 			redirect('auth');
 		}
 	}
+
+
+
+
+
+
+
+
+
+
 
 
 	public function registadmin()

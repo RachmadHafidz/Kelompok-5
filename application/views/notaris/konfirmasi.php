@@ -21,6 +21,9 @@
                 <?php foreach ($akta as $a) : ?>
                     <li class="list-group-item"><?= $a['nama'] ?>
                         <h6><strong><?= $a['keterangan']; ?></strong></h6>
+                        <font color="red">
+                            <h6><strong><?= $a['lapor']; ?></strong></h6>
+                        </font>
                         <a href="<?= base_url(); ?>notaris/ubah/<?= $a['id_akta']; ?>" class="badge badge-success float-right"> Detail</a>
                         <br>
                         <a href="<?= base_url(); ?>notaris/bayar/<?= $a['id_akta']; ?>" class="badge badge-primary float-right"> Pembayaran</a>

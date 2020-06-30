@@ -38,7 +38,7 @@ public class LoginNotaris extends AppCompatActivity {
     ProgressDialog progressDialog;
 
     // Storing server url into String variable.
-    String HttpUrl = "http://192.168.1.7/volley/loginnotaris.php";
+    String HttpUrl = "http://192.168.1.5/volley/loginnotaris.php";
 
     Boolean CheckEditText;
 

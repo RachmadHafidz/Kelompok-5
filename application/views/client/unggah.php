@@ -61,6 +61,10 @@
                             <input type="text" class="form-control" id="biaya" placeholder="biaya" name="biaya" value="<?= $pembayaran['biaya']; ?>" readonly>
                         </div>
                         <div class="col-sm-10">
+                            <label for=" biaya">Nomor Rekening</label>
+                            <input type="text" class="form-control" id="rekening" placeholder="rekening" name="rekening" value="<?= $pembayaran['rekening']; ?>" readonly>
+                        </div>
+                        <div class="col-sm-10">
                             <label for=" status_pembayaran">Status Pembayaran</label>
                             <input type="text" class="form-control" id="status_pembayaran" placeholder="status_pembayaran" name="status_pembayaran" value="<?= $pembayaran['status_pembayaran']; ?>" readonly>
                         </div>

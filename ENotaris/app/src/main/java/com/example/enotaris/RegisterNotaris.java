@@ -26,7 +26,7 @@ public class RegisterNotaris extends AppCompatActivity {
     RequestQueue requestQueue;
     String NamanotHolder,TelpnotHolder,EmailnotHolder,PasswordnotHolder, SkHolder, AlamatHolder;
     ProgressDialog progressDialog;
-    String HttpUrl="http://192.168.1.7/volley/daftarr.php";
+    String HttpUrl="http://192.168.1.5/volley/daftarr.php";
     Boolean CheckEditText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

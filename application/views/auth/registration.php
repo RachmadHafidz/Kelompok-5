@@ -11,15 +11,15 @@
                         </div>
                         <form class="user" method="post" action="<?= base_url('auth/registration'); ?>">
                             <div class="form-group">
-                                <input type="text" class="form-control form-control-user" id="nama" name="nama" placeholder="Nama" value="<?= set_value('nama'); ?>">
+                                <input type="text" class="form-control form-control-user" id="nama" name="nama" autocomplete="off" placeholder="Nama" value="<?= set_value('nama'); ?>">
                                 <?= form_error('nama', ' <small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control form-control-user" id="telepon" name="telepon" placeholder="Telepon" value="<?= set_value('telepon'); ?>">
+                                <input type="text" class="form-control form-control-user" id="telepon" name="telepon" autocomplete="off" placeholder="Telepon" value="<?= set_value('telepon'); ?>">
                                 <?= form_error('telp', ' <small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control form-control-user" id="email" name="email" placeholder="Email" value="<?= set_value('email'); ?>">
+                                <input type="text" class="form-control form-control-user" id="email" name="email" autocomplete="off" placeholder="Email" value="<?= set_value('email'); ?>">
                                 <?= form_error('email', ' <small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                             <div class="form-group">

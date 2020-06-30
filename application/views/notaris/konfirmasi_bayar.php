@@ -22,7 +22,7 @@
                     <li class="list-group-item"><?= $a['nama'] ?>
                         <h6><strong><?= $a['status_pembayaran']; ?></strong></h6>
                         <br>
-                        <a href="<?= base_url(); ?>notaris/eduit/<?= $a['id_akta']; ?>" class="badge badge-warning float-right">Konfirmasi Pembayaran</a>
+                        <a href="<?= base_url(); ?>notaris/eduit/<?= $a['id_akta']; ?>" class="badge badge-success float-right">Konfirmasi Pembayaran</a>
 
                     </li>
                 <?php endforeach; ?>

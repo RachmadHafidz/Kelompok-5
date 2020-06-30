@@ -3,6 +3,18 @@
 
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800"><?= $judul; ?></h1>
+    <?php if ($this->session->flashdata('flash')) : ?>
+        <div class="row mt-3">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">Bukti Pembayaran
+                berhasil <?= $this->session->flashdata('flash'); ?>.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="col-md-6">
+            </div>
+        </div>
+    <?php endif; ?>
     <a href="<?= base_url(); ?>client/unggah_bayar/" class="btn btn-warning float-left"> Unggah Bukti Pembayaran</a>
     <br>
     <br>
@@ -24,6 +36,7 @@
                 <th scope="col">Jam Pengambilan</th>
                 <th scope="col">Biaya Akta</th>
                 <th scope="col">Rekening Pembayaran</th>
+                <th scope="col">Bukti Pembayaran</th>
                 <th scope="col">Status Pembayaran</th>
             </tr>
         </thead>
@@ -41,6 +54,7 @@
                     <td><?php echo $p->jam ?></td>
                     <td><?php echo $p->biaya ?></td>
                     <td><?php echo $p->rekening ?></td>
+                    <td><?php echo $p->bukti ?></td>
                     <td><?php echo $p->status_pembayaran ?></td>
 
 

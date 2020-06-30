@@ -18,6 +18,7 @@
                 <th scope="col">Keterangan</th>
                 <th scope="col">Catatan</th>
                 <th scope="col">Akta</th>
+                <th scope="col">Laporan</th>
                 <th scope="col">Aksi</th>
 
             </tr>
@@ -38,6 +39,7 @@
                     <td><?php echo $u->keterangan ?></td>
                     <td><?php echo $u->catatan ?></td>
                     <td><?php echo $u->akta ?></td>
+                    <td><?php echo $u->lapor ?></td>
                     <td>
 
                         <a href="<?php echo base_url() . 'notaris/download/' . $u->id_akta; ?>" class="badge badge-primary">Download</a>

@@ -39,7 +39,8 @@
         android:singleLine="true"
         android:imeActionId="6"
         android:imeActionLabel="Sign In"
-        android:imeOptions="actionDone" />
+        android:imeOptions="actionDone"
+        app:passwordToggleEnabled="true"/>
 
     <Button
         android:layout_width="match_parent"

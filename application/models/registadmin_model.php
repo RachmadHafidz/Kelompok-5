@@ -13,10 +13,7 @@ class registadmin_model extends CI_Model
             'nama' => htmlspecialchars($this->input->post('nama', true)),
             'foto' => 'avatar.jpg',
             'email' => $this->input->post('email'),
-            'password' => password_hash(
-                $this->input->post('password'),
-                PASSWORD_DEFAULT
-            ),
+            'password' => md5($this->input->post('password')),
             'tipe_id' => '1',
             'daftar' => time()
 

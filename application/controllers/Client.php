@@ -138,11 +138,11 @@ class Client extends CI_Controller
         } else {
             $current_password = $this->input->post('current_password');
             $new_password = $this->input->post('new_password');
-            if (!password_verify($current_password, $data['client']['password'])) {
+            if (md5($current_password) != $data['client']['password']) {
                 $this->session->set_flashdata('flash1', 'salah');
                 redirect('client/ubahpassword');
             } else {
-                $password_hash = password_hash($new_password, PASSWORD_DEFAULT);
+                $password_hash = md5($new_password);
 
                 $this->db->set('password', $password_hash);
                 $this->db->where('email', $this->session->userdata('email'));
@@ -302,18 +302,18 @@ class Client extends CI_Controller
 
     public function buat_akta($id)
     {
-        // echo $id;
-        // $data['judul'] = 'Buat Akta Baru';
-        // $data['client'] = $this->db->get_where('client', ['email' =>
-        // $this->session->userdata('email')])->row_array();
+        $data['idnot'] = $id;
+        $data['judul'] = 'Buat Akta Baru';
+        $data['client'] = $this->db->get_where('client', ['email' =>
+        $this->session->userdata('email')])->row_array();
 
-        // $data['notaris'] = $this->regist_model->getNotarisById($id);
+        $data['notaris'] = $this->regist_model->getNotarisById($id);
 
-        // $this->load->view('templates/client/header_client', $data);
-        // $this->load->view('templates/client/sidebar_client', $data);
-        // $this->load->view('templates/client/topbar_client', $data);
-        // $this->load->view('Client/buat_akta', $data);
-        // $this->load->view('templates/client/footer_client');
+        $this->load->view('templates/client/header_client', $data);
+        $this->load->view('templates/client/sidebar_client', $data);
+        $this->load->view('templates/client/topbar_client', $data);
+        $this->load->view('Client/buat_akta', $data);
+        $this->load->view('templates/client/footer_client');
 
         // function detail digunakan untuk melihat detail data yang kita ingin tampilkan
     }
@@ -433,7 +433,7 @@ class Client extends CI_Controller
         $this->load->view('templates/client/header_client', $data);
         $this->load->view('templates/client/sidebar_client', $data);
         $this->load->view('templates/client/topbar_client', $data);
-        $this->load->view('Client/buat_akta/' . $idnot);
+        $this->load->view('Client/buat_akta');
         $this->load->view('templates/client/footer_client');
 
         $nama = $this->input->post('nama');
@@ -448,14 +448,14 @@ class Client extends CI_Controller
         $akta = $this->input->post('akta');
 
         if ($file = '') {
+            // redirect(base_url('cok/client/buat_akta/' . $idnot));
         } else {
             $config['upload_path'] = './file/';
             $config['allowed_types'] = 'docx';
 
             $this->load->library('upload', $config);
             if (!$this->upload->do_upload('file')) {
-                redirect('client/info');
-                die();
+                redirect('client/buat_akta/' . $idnot);
             } else {
                 $file = $this->upload->data('file_name');
             }
@@ -486,13 +486,8 @@ class Client extends CI_Controller
     {
         $this->load->helper('download');
         $fileinfo = $this->registration_model->download($id);
-
-        if ($fileinfo['akta'] != 'Belum ada Akta') {
-            $file = 'akta/' . $fileinfo['akta'];
-            force_download($file, NULL);
-        } else {
-            echo '<script> alert("gak onok cok") </script>';
-        }
+        $file = 'akta/' . $fileinfo['akta'];
+        force_download($file, NULL);
     }
 
     public function pembayaran()
@@ -595,8 +590,7 @@ class Client extends CI_Controller
             $this->db->set('nama', $nama);
             $this->db->where('id_pembayaran', $id_pembayaran);
             $this->db->update('pembayaran');
-            $this->session->set_flashdata('message', '<div class= "alert alert-success" role="alert">
-            Bukti pembayaran berhasil diunggah  </div>');
+            $this->session->set_flashdata('flash', 'dikirim');
             redirect('client/pembayaran');
         }
     }
@@ -684,5 +678,71 @@ class Client extends CI_Controller
         $this->load->view('templates/client/topbar_client', $data);
         $this->load->view('Client/jawaban', $data);
         $this->load->view('templates/client/footer_client');
+    }
+
+    public function lapor()
+    {
+        $data['judul'] = 'Laporkan Akta';
+        $data['client'] = $this->db->get_where('client', ['email' =>
+        $this->session->userdata('email')])->row_array();
+
+        $data['akta'] = $this->regist_model->getAllAkta();
+        if ($this->input->post('keyword')) {
+            $data['akta'] = $this->regist_model->cari();
+        }
+
+        $this->load->view('templates/client/header_client', $data);
+        $this->load->view('templates/client/sidebar_client', $data);
+        $this->load->view('templates/client/topbar_client', $data);
+        $this->load->view('client/lapor');
+        $this->load->view('templates/client/footer_client');
+
+
+
+        //function index diatas digunakan untuk memanggil halaman
+    }
+    public function laporan($id)
+    {
+        $data['judul'] = 'Laporkan Akta';
+        $data['client'] = $this->db->get_where('client', ['email' =>
+        $this->session->userdata('email')])->row_array();
+
+        $data['akta'] = $this->regist_model->getAktaById($id);
+
+        $this->load->view('templates/client/header_client', $data);
+        $this->load->view('templates/client/sidebar_client', $data);
+        $this->load->view('templates/client/topbar_client', $data);
+        $this->load->view('client/laporan');
+        $this->load->view('templates/client/footer_client');
+
+        // function detail digunakan untuk melihat detail data yang kita ingin tampilkan
+    }
+    public function send()
+    {
+        $data['judul'] = 'Laporkan Akta';
+        $data['client'] = $this->db->get_where('client', ['email' =>
+        $this->session->userdata('email')])->row_array();
+
+        $this->form_validation->set_rules('lapor', 'lapor', 'required|trim');
+
+        if ($this->form_validation->run() == false) {
+            $this->load->view('templates/notaris/header_notaris', $data);
+            $this->load->view('templates/notaris/sidebar_notaris', $data);
+            $this->load->view('templates/notaris/topbar_notaris', $data);
+            $this->load->view('notaris/ubah', $data);
+            $this->load->view('templates/notaris/footer_notaris');
+        } else {
+            $id_akta = $this->input->post('id_akta');
+            $lapor = $this->input->post('lapor');
+
+
+
+
+            $this->db->set('lapor', $lapor);
+            $this->db->where('id_akta', $id_akta);
+            $this->db->update('akta');
+            $this->session->set_flashdata('flash', 'diproses');
+            redirect('client/lihat');
+        }
     }
 }

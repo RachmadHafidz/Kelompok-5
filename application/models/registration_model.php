@@ -14,10 +14,7 @@ class registration_model extends CI_Model
             'telepon' => htmlspecialchars($this->input->post('telepon')),
             'foto' => 'avatar.jpg',
             'email' => $this->input->post('email'),
-            'password' => password_hash(
-                $this->input->post('password'),
-                PASSWORD_DEFAULT
-            ),
+            'password' => md5($this->input->post('password')),
             'tipe_id' => '3',
             'daftar' => time()
 
