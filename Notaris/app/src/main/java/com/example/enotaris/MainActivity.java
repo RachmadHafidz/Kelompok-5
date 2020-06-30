@@ -61,13 +61,24 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                // Redirect to Main Login activity after log out.
+                Intent intent = new Intent(MainActivity.this, LoginNot.class);
+
+                startActivity(intent);
+
+            }
+        });
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 // Redirect to Main Login activity after log out.
-                Intent intent = new Intent(MainActivity.this, Regis.class);
+                Intent intent = new Intent(MainActivity.this, RegNot.class);
 
                 startActivity(intent);
 

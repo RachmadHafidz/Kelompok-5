@@ -6,4 +6,5 @@ package com.example.enotaris;
 
 public class Server {
     public static final String URL = "http://192.168.1.7/kelompok-5/android/";
+    public static final String URL_get = "http://192.168.1.7/kelompok-5/android/pembayaran.php";
 }
