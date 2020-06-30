@@ -18,7 +18,6 @@
                         <?php $client; ?>
                         <?php echo form_open_multipart('client/sewa1'); ?>
 
-                        <input type="hidden" name="idnot" value="<?= $idnot ?>">
                         <div class="form-group">
                             <p>Form pengajuan pembuatan akta jual beli
                                 <a href="<?= base_url('client/download_sk'); ?>">download file disini </a></p>

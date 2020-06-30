@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 14 Jun 2020 pada 05.51
--- Versi server: 10.4.10-MariaDB
--- Versi PHP: 7.1.33
+-- Waktu pembuatan: 25 Jun 2020 pada 17.16
+-- Versi server: 10.4.13-MariaDB
+-- Versi PHP: 7.4.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -43,7 +42,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `nama`, `email`, `foto`, `password`, `tipe_id`, `daftar`) VALUES
-(2, 'Angga', 'angga@gmail.com', 'anggi.jpg', '$2y$10$pdpC6oPY.IYGTHGh8wCbjey0zqOPzTET03sb3T3vT7MhXo5eVNyCa', 1, 1588820075);
+(2, 'Angga', 'angga@gmail.com', 'anggi.jpg', '202cb962ac59075b964b07152d234b70', 1, 1588820075);
 
 -- --------------------------------------------------------
 
@@ -62,19 +61,17 @@ CREATE TABLE `akta` (
   `tanggal` date NOT NULL,
   `keterangan` varchar(123) NOT NULL,
   `catatan` varchar(128) NOT NULL,
-  `akta` varchar(128) NOT NULL
+  `akta` varchar(128) NOT NULL,
+  `lapor` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `akta`
 --
 
-INSERT INTO `akta` (`id_akta`, `email`, `nama`, `nama_notaris`, `email_notaris`, `file`, `jenis`, `tanggal`, `keterangan`, `catatan`, `akta`) VALUES
-(61, 'fafa@gmail.com', 'Ghea', 'Joyo Kusumo S.H', 'joyo@gmail.com', 'FORM_PENGUMPULAN_PERSYARATAN_AJB.docx', 'Surat Kuasa', '2020-06-06', 'Menunggu Konfirmasi', 'Belum ada catatan', 'Belum ada Akta'),
-(62, 'fafa@gmail.com', 'Ghea', 'Joyo Kusumo S.H', 'joyo@gmail.com', 'FORM_PENGUMPULAN_PERSYARATAN_SEWA.docx', 'Akta Sewa Menyewa', '2020-06-06', 'Menunggu Konfirmasi', 'Belum ada catatan', 'Belum ada Akta'),
-(63, 'fafa@gmail.com', 'Ghea', 'Joyo Kusumo S.H', 'joyo@gmail.com', 'FORM_PENGUMPULAN_PERSYARATAN_SEWA1.docx', 'Akta Sewa Menyewa', '2020-06-06', 'Menunggu Konfirmasi', 'Belum ada catatan', 'Belum ada Akta'),
-(64, 'fafa@gmail.com', 'Ghea', 'Kusnadi S.H', 'kusnadi@gmail.com', 'FORM_PENGUMPULAN_PERSYARATAN_SEWA2.docx', 'Akta Jual Beli', '2020-06-06', 'Menunggu Konfirmasi', 'Belum ada catatan', 'Belum ada Akta'),
-(65, 'fafa@gmail.com', 'Ghea', 'Firmansyah S.H', 'firmansyah.notaris@gmail.com', 'FORM_PENGUMPULAN_PERSYARATAN_AJB1.docx', 'Akta Sewa Menyewa', '2020-06-06', 'Menunggu Konfirmasi', 'Belum ada catatan', 'Belum ada Akta');
+INSERT INTO `akta` (`id_akta`, `email`, `nama`, `nama_notaris`, `email_notaris`, `file`, `jenis`, `tanggal`, `keterangan`, `catatan`, `akta`, `lapor`) VALUES
+(67, 'fafa@gmail.com', 'Ghea', 'Kusnadi S.H', 'kusnadi@gmail.com', 'tif_UAS.docx', 'Akta Jual Beli', '2020-06-25', 'Sedang di proses', 'Belum ada catatan', 'Belum ada Akta', 'salah harga'),
+(68, 'fafa@gmail.com', 'Ghea', 'Firmansyah S.H', 'firmansyah.notaris@gmail.com', 'basdat3.docx', 'Akta Sewa Menyewa', '2020-06-25', 'Selesai', 'Belum ada catatan', 'basdat1.docx', 'Salah nama');
 
 -- --------------------------------------------------------
 
@@ -98,8 +95,10 @@ CREATE TABLE `client` (
 --
 
 INSERT INTO `client` (`id`, `nama`, `telepon`, `foto`, `email`, `password`, `tipe_id`, `daftar`) VALUES
-(1, 'Ghea', '085643443897', 'fafa.jpg', 'fafa@gmail.com', '$2y$10$o6AgGD3QSmA6w8eYfmBD4e7yAU0a7c0/DJMTLckuuD7d61mdLQ1Qi', 3, 1588756752),
-(2, 'Cecep Purnama', '085698554872', 'avatar.jpg', 'cecep@gmail.com', '$2y$10$7HiQ0AY.t0vQk2TFvURDj.wrMfGBnenH2EbmDZvOZapnM4MKRWI4a', 3, 1589731522);
+(1, 'Ghea', '085643443897', 'fafa.jpg', 'fafa@gmail.com', '202cb962ac59075b964b07152d234b70', 3, 1588756752),
+(2, 'Cecep Purnama', '085698554872', 'avatar.jpg', 'cecep@gmail.com', '202cb962ac59075b964b07152d234b70', 3, 1589731522),
+(3, 'Surya', '09878987', 'avatar.jpg', 'surya@gmail.com', '202cb962ac59075b964b07152d234b70', 3, 1593064267),
+(4, 'Yoga', '909909', 'avatar.jpg', 'yoga@yoga.com', '202cb962ac59075b964b07152d234b70', 3, 1593096085);
 
 -- --------------------------------------------------------
 
@@ -153,10 +152,11 @@ CREATE TABLE `notaris` (
 --
 
 INSERT INTO `notaris` (`id_notaris`, `nama`, `no_sk`, `telepon`, `foto`, `email`, `password`, `tipe_id`, `daftar`, `hari`, `jam`, `alamat`, `buat_akta`) VALUES
-(1, 'Kusnadi S.H', 'CC/2007-PPAT', '081234543232', 'notaris1.jpg', 'kusnadi@gmail.com', '$2y$10$A30FNLi65DSsP3bUBTfU.eVPjFGXsM2744XogkgCEqo50HsW1Wcr.', 2, 1588756462, 'Senin - Jumat', '07.30 - 16.00', 'Jl. Raya Kenongo No. 9, Sidoarjo', 'Rp 300.000 - Rp 2.000.000'),
-(2, 'Firmansyah S.H', 'CL/2009-PPAT', '081093883745', 'avatar.jpg', 'firmansyah.notaris@gmail.com', '$2y$10$Nc7SBmvG2hkSNENS1MbYi.ov8FdLyxzLSqZsBImguTXk15qPehoEm', 2, 1588994458, 'Senin - Sabtu', '09.00 - 17.30', 'Jl. Kaliwates No. 89, Jember', 'Rp 400.000 - Rp 1.250.000'),
-(3, 'Dwi Tiara S.H', 'CC/2012-PPAT', '081728765533', 'avatar.jpg', 'dwi@gmail.com', '$2y$10$dRpk7hiK/vHv7h.1m4xBdeU.Lf6VgYXZaW4H4salLsFPW8c0HbDDW', 2, 1589086409, 'Senin - Jumat', '08.00 - 14.20', 'Jl Raya Waru, No 90 A. Sidoarjo', 'Rp 200.000 - Rp 1.500.000'),
-(4, 'Joyo Kusumo S.H', 'CC 2001/PPAT', '081121457968', 'avatar.jpg', 'joyo@gmail.com', '$2y$10$94fdRYfjkFDvyOWJCMNciOBEFGjJMEwx/WuaViPFV2mbINAps391.', 2, 1591085939, 'Senin - Jumat', '07.00 - 14.00', 'Perum Indah Prasta Blok C-16, Sidoarjo', 'Rp 450.000 - RP 3.000.000');
+(1, 'Kusnadi S.H', 'CC/2007-PPAT', '081234543232', 'notaris1.jpg', 'kusnadi@gmail.com', '202cb962ac59075b964b07152d234b70', 2, 1588756462, 'Senin - Jumat', '07.30 - 16.00', 'Jl. Raya Kenongo No. 9, Sidoarjo', 'Rp 300.000 - Rp 2.000.000'),
+(2, 'Firmansyah S.H', 'CL/2009-PPAT', '081093883745', 'avatar.jpg', 'firmansyah.notaris@gmail.com', '202cb962ac59075b964b07152d234b70', 2, 1588994458, 'Senin - Sabtu', '09.00 - 17.30', 'Jl. Kaliwates No. 89, Jember', 'Rp 400.000 - Rp 1.250.000'),
+(3, 'Dwi Tiara S.H', 'CC/2012-PPAT', '081728765533', 'avatar.jpg', 'dwi@gmail.com', '202cb962ac59075b964b07152d234b70', 2, 1589086409, 'Senin - Jumat', '08.00 - 14.20', 'Jl Raya Waru, No 90 A. Sidoarjo', 'Rp 200.000 - Rp 1.500.000'),
+(4, 'Joyo Kusumo S.H', 'CC 2001/PPAT', '081121457968', 'avatar.jpg', 'joyo@gmail.com', '202cb962ac59075b964b07152d234b70', 2, 1591085939, 'Senin - Jumat', '07.00 - 14.00', 'Perum Indah Prasta Blok C-16, Sidoarjo', 'Rp 450.000 - RP 3.000.000'),
+(5, 'Nanang Sucipto S.H', 'CC/1998-PPAT', '081232232233', 'avatar.jpg', 'nanang@gmail.com', '202cb962ac59075b964b07152d234b70', 2, 1593063036, '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -181,6 +181,20 @@ CREATE TABLE `pembayaran` (
   `bukti` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `pembayaran`
+--
+
+INSERT INTO `pembayaran` (`id_pembayaran`, `id_akta`, `nama`, `email`, `nama_notaris`, `email_notaris`, `jenis`, `tanggal`, `ambil`, `jam`, `biaya`, `rekening`, `status_pembayaran`, `bukti`) VALUES
+(20, 67, 'Ghea', 'fafa@gmail.com', 'Kusnadi S.H', 'kusnadi@gmail.com', 'Akta Jual Beli', '2020-06-25', '', '', 'Rp 500.000', 'Mandiri - 1400993200390 a/n Kusnadi S.H', 'Lunas', 'anggu1.png'),
+(21, 67, 'Ghea', 'fafa@gmail.com', 'Kusnadi S.H', 'kusnadi@gmail.com', 'Akta Jual Beli', '2020-06-25', 'Menunggu Lunas', 'Menunggu Lunas', 'Rp 500.000', 'Mandiri - 1400993200390 a/n Kusnadi S.H', 'Belum Lunas', 'Belum ada'),
+(22, 67, 'Ghea', 'fafa@gmail.com', 'Kusnadi S.H', 'kusnadi@gmail.com', 'Akta Jual Beli', '2020-06-25', 'Menunggu Lunas', 'Menunggu Lunas', 'Rp 500.000', 'Mandiri - 1400993200390 a/n Kusnadi S.H', 'Belum Lunas', 'Belum ada'),
+(23, 67, 'Ghea', 'fafa@gmail.com', 'Kusnadi S.H', 'kusnadi@gmail.com', 'Akta Jual Beli', '2020-06-25', 'Menunggu Lunas', 'Menunggu Lunas', 'Rp 500.000', 'Mandiri - 1400993200390 a/n Kusnadi S.H', 'Belum Lunas', 'Belum ada'),
+(24, 67, 'Ghea', 'fafa@gmail.com', 'Kusnadi S.H', 'kusnadi@gmail.com', 'Akta Jual Beli', '2020-06-25', 'Menunggu Lunas', 'Menunggu Lunas', 'Rp 500.000', 'Mandiri - 1400993200390 a/n Kusnadi S.H', 'Belum Lunas', 'Belum ada'),
+(25, 67, 'Ghea', 'fafa@gmail.com', 'Kusnadi S.H', 'kusnadi@gmail.com', 'Akta Jual Beli', '2020-06-25', 'Menunggu Lunas', 'Menunggu Lunas', 'Rp 500.000', 'Mandiri - 1400993200390 a/n Kusnadi S.H', 'Belum Lunas', 'Belum ada'),
+(26, 67, 'Ghea', 'fafa@gmail.com', 'Kusnadi S.H', 'kusnadi@gmail.com', 'Akta Jual Beli', '2020-06-25', 'Menunggu Lunas', 'Menunggu Lunas', 'Rp 500.000', 'Mandiri - 1400993200390 a/n Kusnadi S.H', 'Belum Lunas', 'Belum ada'),
+(27, 67, 'Ghea', 'fafa@gmail.com', 'Kusnadi S.H', 'kusnadi@gmail.com', 'Akta Jual Beli', '2020-06-25', 'Menunggu Lunas', 'Menunggu Lunas', 'Rp 500.000', 'Mandiri - 1400993200390 a/n Kusnadi S.H', 'Belum Lunas', 'Belum ada');
+
 -- --------------------------------------------------------
 
 --
@@ -200,17 +214,6 @@ CREATE TABLE `tanya` (
   `tanggal` date NOT NULL,
   `keterangan` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `tanya`
---
-
-INSERT INTO `tanya` (`id_tanya`, `id`, `nama`, `email`, `id_notaris`, `nama_notaris`, `email_notaris`, `pertanyaan`, `jawaban`, `tanggal`, `keterangan`) VALUES
-(1, 1, 'Ghea', 'fafa@gmail.com', 1, 'Kusnadi S.H', 'kusnadi@gmail.com', 'Apakah bisa selesai dalam 1 minggu ?', 'ok', '2020-06-03', 'Terjawab'),
-(2, 1, 'Ghea', 'fafa@gmail.com', 1, 'Kusnadi S.H', 'kusnadi@gmail.com', 'ok', 'ok', '2020-06-03', 'Terjawab'),
-(3, 1, 'Ghea', 'fafa@gmail.com', 1, 'Kusnadi S.H', 'kusnadi@gmail.com', 'ok?', '', '2020-06-04', 'Menunggu Jawaban'),
-(4, 1, 'Ghea', 'fafa@gmail.com', 1, 'Kusnadi S.H', 'kusnadi@gmail.com', 'ok???', '', '2020-06-04', 'Menunggu Jawaban'),
-(5, 1, 'Ghea', 'fafa@gmail.com', 1, 'Kusnadi S.H', 'kusnadi@gmail.com', 'ok ta', '', '2020-06-04', 'Menunggu Jawaban');
 
 -- --------------------------------------------------------
 
@@ -394,13 +397,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT untuk tabel `akta`
 --
 ALTER TABLE `akta`
-  MODIFY `id_akta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `id_akta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT untuk tabel `client`
 --
 ALTER TABLE `client`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `kantor`
@@ -412,13 +415,13 @@ ALTER TABLE `kantor`
 -- AUTO_INCREMENT untuk tabel `notaris`
 --
 ALTER TABLE `notaris`
-  MODIFY `id_notaris` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_notaris` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `pembayaran`
 --
 ALTER TABLE `pembayaran`
-  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT untuk tabel `tanya`

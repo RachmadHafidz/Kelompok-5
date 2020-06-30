@@ -373,9 +373,7 @@ class Notaris extends CI_Controller
 
         );
         $this->db->insert('pembayaran', $data);
-        $this->session->set_flashdata('flash', 'dikirim');
-
-        redirect('notaris/lihat_bayar');
+        redirect('notaris/pembayaran');
 
 
 
