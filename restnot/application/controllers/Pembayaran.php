@@ -26,7 +26,7 @@ class Pembayaran extends REST_Controller
             $regis = $this->db->get('pembayaran')->result();
         }
 
-        // echo json_encode($regis);
+        echo json_encode($regis);
         $this->response($regis, 200);
     }
 }

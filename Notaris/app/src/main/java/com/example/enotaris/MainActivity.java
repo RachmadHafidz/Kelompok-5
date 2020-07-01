@@ -2,21 +2,18 @@ package com.example.enotaris;
 
 
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
 
 
-
-import java.util.HashMap;
-import java.util.Map;
+import com.example.enotaris.client.Login;
+import com.example.enotaris.client.RegisterActivity;
+import com.example.enotaris.notaris.LoginNot;
+import com.example.enotaris.notaris.RegNot;
 
 public class MainActivity extends AppCompatActivity {
 

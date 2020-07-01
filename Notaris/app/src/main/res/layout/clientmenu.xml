@@ -8,12 +8,12 @@
 
 
     <android.support.design.widget.BottomNavigationView
-        android:id="@+id/btm_nav"
+        android:id="@+id/btm_nav2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         app:itemBackground="@color/biru"
 
-        app:menu="@menu/bottom_menu" />
+        app:menu="@menu/bottom_menu_client" />
 
 </RelativeLayout>

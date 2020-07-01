@@ -1,4 +1,4 @@
-package com.example.enotaris;
+package com.example.enotaris.client;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -17,6 +17,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.enotaris.R;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -116,7 +117,7 @@ public class Login extends AppCompatActivity {
                             finish();
 
                             // Opening the user profile activity using intent.
-                            Intent intent = new Intent(Login.this, DashboardActivity.class);
+                            Intent intent = new Intent(Login.this, ListNotaris.class);
 
                             // Sending User Email to another activity using intent.
                             intent.putExtra("UserEmailTAG", EmailHolder);

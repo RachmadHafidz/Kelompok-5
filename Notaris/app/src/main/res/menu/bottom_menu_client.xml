@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_daftar"
+        android:enabled="true"
+        android:icon="@drawable/ic_action_daftar"
+        android:title="Daftar Notaris"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_chat"
+        android:enabled="true"
+        android:icon="@drawable/ic_action_chat"
+        android:title="Chat"
+        app:showAsAction="ifRoom" />
+
+    <item
+    android:id="@+id/action_profil2"
+    android:enabled="true"
+    android:icon="@drawable/ic_action_profil"
+    android:title="Profil"
+    app:showAsAction="ifRoom" />
+
+</menu>

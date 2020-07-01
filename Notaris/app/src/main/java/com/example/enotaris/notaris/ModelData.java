@@ -1,4 +1,4 @@
-package com.example.enotaris;
+package com.example.enotaris.notaris;
 
 public class ModelData {
     String snama, sjenis, sstatus;
@@ -8,8 +8,17 @@ public class ModelData {
 
     public ModelData(String nama, String jenis, String status) {
         this.snama = nama;
-        this.sjenis = nama;
-        this.sstatus = nama;
+        this.sjenis = jenis;
+        this.sstatus = status;
+    }
+
+
+    public String getNama() {
+        return snama;
+    }
+
+    public void setNama(String nama) {
+        this.snama = nama;
     }
 
     public String getJenis() {
@@ -18,14 +27,6 @@ public class ModelData {
 
     public void setJenis(String jenis) {
         this.sjenis = jenis;
-    }
-
-    public String getNama() {
-        return snama;
-    }
-
-    public void setNama(String nama) {
-        this.snama = nama;
     }
 
     public String getStatus() {
