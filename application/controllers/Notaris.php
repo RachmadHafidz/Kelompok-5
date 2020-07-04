@@ -41,7 +41,7 @@ class Notaris extends CI_Controller
 
 
 
-        //function index diatas digunakan untuk memanggil halaman
+        //function index diatas digunakan untuk memanggil halaman 
     }
 
     public function akta()
@@ -563,4 +563,4 @@ class Notaris extends CI_Controller
         $file = 'bukti/' . $fileinfo['bukti'];
         force_download($file, NULL);
     }
-}
+} 
